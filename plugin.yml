@@ -1,0 +1,15 @@
+name: cooltimeheal
+main: cooltimeheal\Main
+version: 0.0.1
+api:
+- 2.0.0
+- 3.0.0
+- 3.0.1
+commands:
+ 힐:
+  usage: /힐
+  description: 회복
+  permission: cooltimeheal.heal
+permissions:
+ cooltimeheal.heal:
+  default: true
