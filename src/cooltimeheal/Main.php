@@ -10,6 +10,13 @@ use pocketmine\utils\TextFormat;
 class Main extends PluginBase implements Listener {
 	public function onEnable() {
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
+		if (!extension_loaded('shmop')) {
+			if (strtoupper(substr(PHP_OS, 0, 3 )) === 'WIN') {
+				dl('php_shmop.dll');
+			} else {
+				dl('shmop.so');
+			}
+		}
 	}
 	public function onCommand(CommandSender $Sender,Command $command, $label,array $args) {
 		if ($command->getName() == '힐') {
