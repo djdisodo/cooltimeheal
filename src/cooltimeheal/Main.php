@@ -26,7 +26,7 @@ class Main extends PluginBase implements Listener {
 			return false;
 		}
 		if ($command->getName() == '힐') {
-			$playername = $Sender->getName();
+			$playername = 'cth'.$Sender->getName();
 			$playername = strtolower( $playername );
 			$cooltime = 10; //10초
 			$playername = base_convert( $playername, 35, 10); //10진으로 변환
