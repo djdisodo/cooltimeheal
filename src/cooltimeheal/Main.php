@@ -33,7 +33,7 @@ class Main extends PluginBase implements Listener {
 			$shmid = shmop_open((int)$playername, 'c', 0755, 1024);
 			if ( shmop_read( $shmid, 0, 11 ) <= time() ) {
 				$Sender->sendMessage(TextFormat::RED . "회복되었습니다");
-				$Sender->heal($Sender->getMaxHealth(), new EntityRegainHealthEvent($Sender, $Sender->getMaxHealth() - $Se->getHealth(), EntityRegainHealthEvent::CAUSE_CUSTOM));
+				$Sender->heal($Sender->getMaxHealth(), new EntityRegainHealthEvent($Sender, $Sender->getMaxHealth() - $Sender->getHealth(), EntityRegainHealthEvent::CAUSE_CUSTOM));
 				shmop_write($shmid, time() + $cooltime, 0);
 				return true;
 			} else {
